@@ -14,7 +14,7 @@ public interface SoldRepository extends JpaRepository<SoldCars, Long> {
     @Query("select sum(price) from SoldCars where date_buy BETWEEN :from and :to")
     Long countPriceInDate(LocalDate from, LocalDate to);
 
-    @Query(value = "select client.fio as num, client.phone as phone, sold.price, sold.date_buy, car.name, sold.count\n" +
+    @Query(value = "select client.fio, client.phone, sold.price, sold.date_buy, car.name, sold.count\n" +
             "from sold_cars sold\n" +
             "join clients client on client.id = sold.client_id\n" +
             "join cars car on car.id = sold.car_id\n" +
