@@ -23,7 +23,7 @@ public class SoldService {
     }
 
     public SoldCars getById(Long id){
-        return soldRepository.getById(id);
+        return soldRepository.findById(id).orElse(null);
     }
 
     public SoldCars create(SoldCars sold){

@@ -22,7 +22,7 @@ public class CarService {
     }
 
     public Cars getById(Long id){
-        return carRepository.getById(id);
+        return carRepository.findById(id).orElse(null);
     }
 
     public Cars create(Cars sold){
